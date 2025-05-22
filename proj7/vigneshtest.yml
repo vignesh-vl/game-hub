@@ -1,0 +1,12 @@
+kind: test
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: vigneshtest
+  namespace: proj7
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $ref: ''
+  environment:
+    $ref: proj7:new test:1.0

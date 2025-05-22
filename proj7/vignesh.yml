@@ -1,0 +1,15 @@
+kind: environment
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: vignesh
+  namespace: proj7
+  version: '1.0'
+  tags: []
+spec:
+  variables:
+    - key: code
+      isSecret: false
+      value: "200"
+    - key: njjj
+      isSecret: false
+      value: nnn

@@ -1,0 +1,12 @@
+kind: environment
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: new test
+  namespace: proj7
+  version: '1.0'
+  tags: []
+spec:
+  variables:
+    - key: nnnn
+      isSecret: false
+      value: "209"
