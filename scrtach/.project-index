@@ -15,7 +15,7 @@
       "filePath": "scrtach/vinay.yaml",
       "docIndex": 0,
       "assetType": "resource",
-      "lastIndexed": 1784025874037,
+      "lastIndexed": 1784026001656,
       "schemaVersion": 1,
       "kind": "API",
       "name": "vinay",
@@ -24,12 +24,30 @@
       "contentHash": "12c382cd8fc920b4"
     },
     {
+      "id": "5b719ad9-234b-40cd-97e2-d4c7aaf6c2ff:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/api_studio_project.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784026315539,
+      "schemaVersion": 1
+    },
+    {
       "id": "9bbcdd66-5f5c-416e-ad0b-11d846d2e0b3:0",
       "projectId": "CHNh263L",
       "filePath": "scrtach/.project-index",
       "docIndex": 0,
       "assetType": "support",
       "lastIndexed": 1784025500133,
+      "schemaVersion": 1
+    },
+    {
+      "id": "ebdc61ca-50ef-4204-aa73-e04040b4b357:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/api_studio_project-1.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784026511888,
       "schemaVersion": 1
     }
   ],
