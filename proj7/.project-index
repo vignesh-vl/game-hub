@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "2952821f-dd64-4c9c-8bd8-c59d5d84d404:0",
+      "projectId": "JsmODucv",
+      "filePath": "proj7/vigneshtest.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1784025439277,
+      "schemaVersion": 1,
+      "kind": "test",
+      "name": "vigneshtest",
+      "namespace": "proj7",
+      "version": "1.0",
+      "contentHash": "da02b339f4eec04c"
+    },
+    {
+      "id": "b41facb7-9e05-439b-bde6-8e209405d99e:0",
+      "projectId": "JsmODucv",
+      "filePath": "proj7/vignesh.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1784025438594,
+      "schemaVersion": 1,
+      "kind": "environment",
+      "name": "vignesh",
+      "namespace": "proj7",
+      "version": "1.0",
+      "contentHash": "5e64e595da55e992"
+    },
+    {
+      "id": "dadb9854-153f-4343-b86c-996d600775f6:0",
+      "projectId": "JsmODucv",
+      "filePath": "proj7/new test.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1784025437886,
+      "schemaVersion": 1,
+      "kind": "environment",
+      "name": "new test",
+      "namespace": "proj7",
+      "version": "1.0",
+      "contentHash": "35a3bf172257253c"
+    }
+  ],
+  "edges": [
+    {
+      "id": "1ad7879c-21c9-4f5f-a52d-f080bacb2553",
+      "projectId": "JsmODucv",
+      "sourceNodeId": "2952821f-dd64-4c9c-8bd8-c59d5d84d404:0",
+      "targetNodeId": "dadb9854-153f-4343-b86c-996d600775f6:0",
+      "targetRefType": "same-project",
+      "targetRefString": "proj7:new test:1.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1784025439289,
+      "lastValidated": 1784025439289
+    }
+  ]
+}

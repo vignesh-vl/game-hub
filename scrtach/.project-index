@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "3370c3ae-1f1e-4ee9-a561-770c8ed710a5:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/vinay-spec.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784025872319,
+      "schemaVersion": 1
+    },
+    {
+      "id": "451c64fa-9152-4609-84f9-17eb56a6d4f7:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/vinay.yaml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1784025874037,
+      "schemaVersion": 1,
+      "kind": "API",
+      "name": "vinay",
+      "namespace": "scrtach",
+      "version": "1.0",
+      "contentHash": "12c382cd8fc920b4"
+    },
+    {
+      "id": "9bbcdd66-5f5c-416e-ad0b-11d846d2e0b3:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/.project-index",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784025500133,
+      "schemaVersion": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "b008b3d6-f657-462a-8e3d-9c2c3982a4a4",
+      "projectId": "CHNh263L",
+      "sourceNodeId": "451c64fa-9152-4609-84f9-17eb56a6d4f7:0",
+      "targetNodeId": "3370c3ae-1f1e-4ee9-a561-770c8ed710a5:0",
+      "targetRefType": "same-project",
+      "targetRefString": "./vinay-spec.yml",
+      "targetRefKind": "support",
+      "isValid": true,
+      "createdAt": 1784025874044,
+      "lastValidated": 1784025874044
+    }
+  ]
+}

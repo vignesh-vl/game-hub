@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "8fdf3201-b473-4880-bc25-4faf29180459:0",
+      "projectId": "uGjyCFAX",
+      "filePath": "new2323/proj7/vignesh.yml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1784025835374,
+      "schemaVersion": 1,
+      "kind": "environment",
+      "name": "vignesh",
+      "namespace": "proj7",
+      "version": "1.0",
+      "contentHash": "5e64e595da55e992"
+    }
+  ],
+  "edges": []
+}

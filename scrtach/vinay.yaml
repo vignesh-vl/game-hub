@@ -1,0 +1,11 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: vinay
+  version: '1.0'
+  namespace: scrtach
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./vinay-spec.yml
