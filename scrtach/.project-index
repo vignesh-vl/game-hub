@@ -1,6 +1,15 @@
 {
   "nodes": [
     {
+      "id": "2f966a34-da20-4414-b4d0-539655ca5479:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/api_studio_project-2.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784026561473,
+      "schemaVersion": 1
+    },
+    {
       "id": "3370c3ae-1f1e-4ee9-a561-770c8ed710a5:0",
       "projectId": "CHNh263L",
       "filePath": "scrtach/vinay-spec.yml",
@@ -39,6 +48,15 @@
       "docIndex": 0,
       "assetType": "support",
       "lastIndexed": 1784025500133,
+      "schemaVersion": 1
+    },
+    {
+      "id": "d28dd9c5-d17a-40fd-9099-27676b93b222:0",
+      "projectId": "CHNh263L",
+      "filePath": "scrtach/dummy.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1784026582839,
       "schemaVersion": 1
     },
     {
