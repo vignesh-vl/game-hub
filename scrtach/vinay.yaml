@@ -1,7 +1,7 @@
 kind: API
 apiVersion: api.ibm.com/v1
 metadata:
-  name: sai3
+  name: sai5
   version: '1.0'
   namespace: scrtach
   tags: []
