@@ -24,13 +24,13 @@
       "filePath": "scrtach/vinay.yaml",
       "docIndex": 0,
       "assetType": "resource",
-      "lastIndexed": 1784115269964,
+      "lastIndexed": 1784117470824,
       "schemaVersion": 1,
       "kind": "API",
-      "name": "sai2",
+      "name": "sai10",
       "namespace": "scrtach",
       "version": "1.0",
-      "contentHash": "dee7719a89cdf486"
+      "contentHash": "dcd9dd68cf92f0c1"
     },
     {
       "id": "5b719ad9-234b-40cd-97e2-d4c7aaf6c2ff:0",
