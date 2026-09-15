@@ -1,0 +1,10 @@
+kind: test
+apiVersion: api.ibm.com/v1
+metadata:
+  name: demo
+  namespace: soks
+  version: '1.0'
+  tags: []
+spec:
+  api: {}
+  request: []
