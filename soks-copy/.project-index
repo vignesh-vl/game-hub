@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "023b86d3-a4b0-44d2-a9b1-100c755bf8b1:0",
+      "projectId": "F4PGr65Y",
+      "filePath": "soks-copy/soks-copy/new/1.keep",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1789476412580,
+      "schemaVersion": 1
+    },
+    {
+      "id": "a1795756-8dd9-4e06-a827-8dfe6d0ce516:0",
+      "projectId": "F4PGr65Y",
+      "filePath": "soks-copy/soks-copy/demo/final-test.yaml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1789476414010,
+      "schemaVersion": 1,
+      "kind": "test",
+      "name": "demo",
+      "namespace": "soks",
+      "version": "1.0",
+      "contentHash": "d5fc5deefc0ba6bd"
+    }
+  ],
+  "edges": []
+}
