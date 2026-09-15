@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "4154ec47-4675-4290-b71d-6ca9be9e4bb2:0",
+      "projectId": "asXO3tMF",
+      "filePath": "soks/new/file.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1789471452995,
+      "schemaVersion": 1
+    },
+    {
+      "id": "46b22d5b-c264-47bd-903f-b5d4fb769ad6:0",
+      "projectId": "asXO3tMF",
+      "filePath": "soks/new/1.keep",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1789471445774,
+      "schemaVersion": 1
+    }
+  ],
+  "edges": []
+}
