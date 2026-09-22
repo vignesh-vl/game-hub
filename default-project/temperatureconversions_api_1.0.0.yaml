@@ -1,0 +1,15 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: temperatureconversions
+  namespace: default-project
+  version: 1.0.0
+  tags: []
+  type: SOAP
+spec:
+  api-spec:
+    $path: ./temperatureconversions_api_1.0.0.wsdl
+  rest-def:
+    $path: ./temperatureconversions_api_1.0.0.spec.yaml
+  policy-sequence:
+    - $ref: default-project:temperatureconversions-policy:1.0.0

@@ -1,0 +1,790 @@
+swagger: '2.0'
+info:
+  title: TemperatureConversions
+  description: >-
+    DataFlex Web Service to convert temperature values between Celsius and
+    Fahrenheit
+  x-ibm-name: temperatureconversions
+  version: 1.0.0
+schemes:
+  - https
+basePath: /TemperatureConversions
+produces:
+  - application/xml
+consumes:
+  - text/xml
+securityDefinitions:
+  clientID:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+    description: ''
+security:
+  - clientID: []
+x-ibm-configuration:
+  type: wsdl
+  phase: realized
+  enforced: true
+  testable: true
+  gateway: datapower-api-gateway
+  cors:
+    enabled: true
+  wsdl-definition:
+    wsdl: ./temperatureconversions_api_1.0.0.wsdl
+    service: TemperatureConversions
+    port: TemperatureConversionsSoap
+    soap-version: '1.1'
+  assembly:
+    execute:
+      - invoke:
+          title: invoke
+          target-url: >-
+            https://webservices.daehosting.com/services/TemperatureConversions.wso
+          version: 2.0.0
+          header-control:
+            type: blocklist
+            values: []
+          parameter-control:
+            type: blocklist
+            values: []
+  x-ibm-apiconnect-wsdl:
+    package-version: 2.0.36
+    options: {}
+    messages:
+      info:
+        - message: >-
+            The wsdl 'service' has multiple 'ports'. The api is generated using
+            information in the first soap 'port'.
+      warning: []
+      error: []
+    previous:
+      package-version: 2.0.36
+      options: {}
+      messages:
+        info:
+          - message: >-
+              The wsdl 'service' has multiple 'ports'. The api is generated
+              using information in the first soap 'port'.
+        warning: []
+        error: []
+paths:
+  /CelsiusToFahrenheit:
+    post:
+      summary: Operation CelsiusToFahrenheit
+      description: Converts a Celsius Temperature to a Fahrenheit value
+      operationId: CelsiusToFahrenheit
+      x-ibm-soap:
+        soap-action: ''
+        soap-operation: '{http://webservices.daehosting.com/temperature}CelsiusToFahrenheit'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/CelsiusToFahrenheitInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/CelsiusToFahrenheitOutput'
+  /FahrenheitToCelsius:
+    post:
+      summary: Operation FahrenheitToCelsius
+      description: Converts a Fahrenheit Temperature to a Celsius value
+      operationId: FahrenheitToCelsius
+      x-ibm-soap:
+        soap-action: ''
+        soap-operation: '{http://webservices.daehosting.com/temperature}FahrenheitToCelsius'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/FahrenheitToCelsiusInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/FahrenheitToCelsiusOutput'
+  /WindChillInCelsius:
+    post:
+      summary: Operation WindChillInCelsius
+      description: Windchill temperature calculated with the formula of Steadman
+      operationId: WindChillInCelsius
+      x-ibm-soap:
+        soap-action: ''
+        soap-operation: '{http://webservices.daehosting.com/temperature}WindChillInCelsius'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/WindChillInCelsiusInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/WindChillInCelsiusOutput'
+  /WindChillInFahrenheit:
+    post:
+      summary: Operation WindChillInFahrenheit
+      description: Windchill temperature calculated with the formula of Steadman
+      operationId: WindChillInFahrenheit
+      x-ibm-soap:
+        soap-action: ''
+        soap-operation: '{http://webservices.daehosting.com/temperature}WindChillInFahrenheit'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/WindChillInFahrenheitInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/WindChillInFahrenheitOutput'
+definitions:
+  Security:
+    xml:
+      namespace: >-
+        http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+      prefix: wsse
+    description: Header for WS-Security
+    type: object
+    properties:
+      UsernameToken:
+        xml:
+          namespace: >-
+            http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+          prefix: wsse
+        type: object
+        properties:
+          Username:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+          Password:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+          Nonce:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+            properties:
+              EncodingType:
+                xml:
+                  namespace: ''
+                  attribute: true
+                type: string
+          Created:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+      Timestamp:
+        xml:
+          namespace: >-
+            http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+          prefix: wsu
+        type: object
+        properties:
+          Created:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+          Expires:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+          Id:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+              attribute: true
+            type: string
+  CelsiusToFahrenheitInput:
+    description: Input message for wsdl operation CelsiusToFahrenheit
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/CelsiusToFahrenheitHeader'
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              CelsiusToFahrenheit:
+                $ref: '#/definitions/CelsiusToFahrenheit_element_tns'
+            required:
+              - CelsiusToFahrenheit
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: CelsiusToFahrenheit
+      wsdl-message-direction-or-name: CelsiusToFahrenheitRequest
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <tns:CelsiusToFahrenheit xmlns:tns="http://webservices.daehosting.com/temperature"><!-- mandatory -->
+         <tns:nCelsius><!-- mandatory -->3</tns:nCelsius>
+        </tns:CelsiusToFahrenheit>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  CelsiusToFahrenheitHeader:
+    description: Input headers for wsdl operation CelsiusToFahrenheit
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  CelsiusToFahrenheitOutput:
+    description: Output message for wsdl operation CelsiusToFahrenheit
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              CelsiusToFahrenheitResponse:
+                $ref: '#/definitions/CelsiusToFahrenheitResponse_element_tns'
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: CelsiusToFahrenheit
+      wsdl-message-direction-or-name: CelsiusToFahrenheitResponse
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <tns:CelsiusToFahrenheitResponse xmlns:tns="http://webservices.daehosting.com/temperature">
+         <tns:CelsiusToFahrenheitResult><!-- mandatory -->3</tns:CelsiusToFahrenheitResult>
+        </tns:CelsiusToFahrenheitResponse>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  FahrenheitToCelsiusInput:
+    description: Input message for wsdl operation FahrenheitToCelsius
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/FahrenheitToCelsiusHeader'
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              FahrenheitToCelsius:
+                $ref: '#/definitions/FahrenheitToCelsius_element_tns'
+            required:
+              - FahrenheitToCelsius
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: FahrenheitToCelsius
+      wsdl-message-direction-or-name: FahrenheitToCelsiusRequest
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <tns:FahrenheitToCelsius xmlns:tns="http://webservices.daehosting.com/temperature"><!-- mandatory -->
+         <tns:nFahrenheit><!-- mandatory -->3</tns:nFahrenheit>
+        </tns:FahrenheitToCelsius>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  FahrenheitToCelsiusHeader:
+    description: Input headers for wsdl operation FahrenheitToCelsius
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  FahrenheitToCelsiusOutput:
+    description: Output message for wsdl operation FahrenheitToCelsius
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              FahrenheitToCelsiusResponse:
+                $ref: '#/definitions/FahrenheitToCelsiusResponse_element_tns'
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: FahrenheitToCelsius
+      wsdl-message-direction-or-name: FahrenheitToCelsiusResponse
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <tns:FahrenheitToCelsiusResponse xmlns:tns="http://webservices.daehosting.com/temperature">
+         <tns:FahrenheitToCelsiusResult><!-- mandatory -->3</tns:FahrenheitToCelsiusResult>
+        </tns:FahrenheitToCelsiusResponse>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  WindChillInCelsiusInput:
+    description: Input message for wsdl operation WindChillInCelsius
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/WindChillInCelsiusHeader'
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              WindChillInCelsius:
+                $ref: '#/definitions/WindChillInCelsius_element_tns'
+            required:
+              - WindChillInCelsius
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: WindChillInCelsius
+      wsdl-message-direction-or-name: WindChillInCelsiusRequest
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <tns:WindChillInCelsius xmlns:tns="http://webservices.daehosting.com/temperature"><!-- mandatory -->
+         <tns:nCelsius><!-- mandatory -->3</tns:nCelsius>
+         <tns:nWindSpeed><!-- mandatory -->3</tns:nWindSpeed>
+        </tns:WindChillInCelsius>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  WindChillInCelsiusHeader:
+    description: Input headers for wsdl operation WindChillInCelsius
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  WindChillInCelsiusOutput:
+    description: Output message for wsdl operation WindChillInCelsius
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              WindChillInCelsiusResponse:
+                $ref: '#/definitions/WindChillInCelsiusResponse_element_tns'
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: WindChillInCelsius
+      wsdl-message-direction-or-name: WindChillInCelsiusResponse
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <tns:WindChillInCelsiusResponse xmlns:tns="http://webservices.daehosting.com/temperature">
+         <tns:WindChillInCelsiusResult><!-- mandatory -->3</tns:WindChillInCelsiusResult>
+        </tns:WindChillInCelsiusResponse>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  WindChillInFahrenheitInput:
+    description: Input message for wsdl operation WindChillInFahrenheit
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/WindChillInFahrenheitHeader'
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              WindChillInFahrenheit:
+                $ref: '#/definitions/WindChillInFahrenheit_element_tns'
+            required:
+              - WindChillInFahrenheit
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: WindChillInFahrenheit
+      wsdl-message-direction-or-name: WindChillInFahrenheitRequest
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <!-- The Security element should be removed if WS-Security is not enabled on the SOAP target-url -->
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <tns:WindChillInFahrenheit xmlns:tns="http://webservices.daehosting.com/temperature"><!-- mandatory -->
+         <tns:nFahrenheit><!-- mandatory -->3</tns:nFahrenheit>
+         <tns:nWindSpeed><!-- mandatory -->3</tns:nWindSpeed>
+        </tns:WindChillInFahrenheit>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  WindChillInFahrenheitHeader:
+    description: Input headers for wsdl operation WindChillInFahrenheit
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  WindChillInFahrenheitOutput:
+    description: Output message for wsdl operation WindChillInFahrenheit
+    type: object
+    properties:
+      Envelope:
+        xml:
+          namespace: http://schemas.xmlsoap.org/soap/envelope/
+          prefix: soapenv
+        type: object
+        properties:
+          Body:
+            xml:
+              namespace: http://schemas.xmlsoap.org/soap/envelope/
+              prefix: soapenv
+            type: object
+            properties:
+              WindChillInFahrenheitResponse:
+                $ref: '#/definitions/WindChillInFahrenheitResponse_element_tns'
+        required:
+          - Body
+    required:
+      - Envelope
+    x-ibm-schema:
+      wsdl-port: >-
+        {http://webservices.daehosting.com/temperature}TemperatureConversionsSoap
+      wsdl-operation: WindChillInFahrenheit
+      wsdl-message-direction-or-name: WindChillInFahrenheitResponse
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <tns:WindChillInFahrenheitResponse xmlns:tns="http://webservices.daehosting.com/temperature">
+         <tns:WindChillInFahrenheitResult><!-- mandatory -->3</tns:WindChillInFahrenheitResult>
+        </tns:WindChillInFahrenheitResponse>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  CelsiusToFahrenheit_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: CelsiusToFahrenheit
+    type: object
+    properties:
+      nCelsius:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - nCelsius
+    example: >-
+
+      <tns:CelsiusToFahrenheit
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:nCelsius><!-- mandatory -->3</tns:nCelsius>
+      </tns:CelsiusToFahrenheit>
+  CelsiusToFahrenheitResponse_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: CelsiusToFahrenheitResponse
+    type: object
+    properties:
+      CelsiusToFahrenheitResult:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - CelsiusToFahrenheitResult
+    example: >-
+
+      <tns:CelsiusToFahrenheitResponse
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:CelsiusToFahrenheitResult><!-- mandatory -->3</tns:CelsiusToFahrenheitResult>
+      </tns:CelsiusToFahrenheitResponse>
+  FahrenheitToCelsius_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: FahrenheitToCelsius
+    type: object
+    properties:
+      nFahrenheit:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - nFahrenheit
+    example: >-
+
+      <tns:FahrenheitToCelsius
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:nFahrenheit><!-- mandatory -->3</tns:nFahrenheit>
+      </tns:FahrenheitToCelsius>
+  FahrenheitToCelsiusResponse_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: FahrenheitToCelsiusResponse
+    type: object
+    properties:
+      FahrenheitToCelsiusResult:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - FahrenheitToCelsiusResult
+    example: >-
+
+      <tns:FahrenheitToCelsiusResponse
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:FahrenheitToCelsiusResult><!-- mandatory -->3</tns:FahrenheitToCelsiusResult>
+      </tns:FahrenheitToCelsiusResponse>
+  WindChillInCelsius_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: WindChillInCelsius
+    type: object
+    properties:
+      nCelsius:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+      nWindSpeed:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - nCelsius
+      - nWindSpeed
+    example: >-
+
+      <tns:WindChillInCelsius
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:nCelsius><!-- mandatory -->3</tns:nCelsius>
+       <tns:nWindSpeed><!-- mandatory -->3</tns:nWindSpeed>
+      </tns:WindChillInCelsius>
+  WindChillInCelsiusResponse_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: WindChillInCelsiusResponse
+    type: object
+    properties:
+      WindChillInCelsiusResult:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - WindChillInCelsiusResult
+    example: >-
+
+      <tns:WindChillInCelsiusResponse
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:WindChillInCelsiusResult><!-- mandatory -->3</tns:WindChillInCelsiusResult>
+      </tns:WindChillInCelsiusResponse>
+  WindChillInFahrenheit_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: WindChillInFahrenheit
+    type: object
+    properties:
+      nFahrenheit:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+      nWindSpeed:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - nFahrenheit
+      - nWindSpeed
+    example: >-
+
+      <tns:WindChillInFahrenheit
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:nFahrenheit><!-- mandatory -->3</tns:nFahrenheit>
+       <tns:nWindSpeed><!-- mandatory -->3</tns:nWindSpeed>
+      </tns:WindChillInFahrenheit>
+  WindChillInFahrenheitResponse_element_tns:
+    xml:
+      namespace: http://webservices.daehosting.com/temperature
+      prefix: tns
+      name: WindChillInFahrenheitResponse
+    type: object
+    properties:
+      WindChillInFahrenheitResult:
+        xml:
+          namespace: http://webservices.daehosting.com/temperature
+          prefix: tns
+        type: number
+    required:
+      - WindChillInFahrenheitResult
+    example: >-
+
+      <tns:WindChillInFahrenheitResponse
+      xmlns:tns="http://webservices.daehosting.com/temperature">
+       <tns:WindChillInFahrenheitResult><!-- mandatory -->3</tns:WindChillInFahrenheitResult>
+      </tns:WindChillInFahrenheitResponse>

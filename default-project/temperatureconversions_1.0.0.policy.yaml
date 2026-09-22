@@ -1,0 +1,55 @@
+kind: DataPowerAssembly
+apiVersion: api.ibm.com/v1
+metadata:
+  name: temperatureconversions-policy
+  namespace: default-project
+  version: 1.0.0
+  tags: []
+  type: REST
+spec:
+  x-ibm-configuration:
+    type: wsdl
+    phase: realized
+    enforced: true
+    testable: true
+    gateway: datapower-api-gateway
+    cors:
+      enabled: true
+    wsdl-definition:
+      wsdl: ./temperatureconversions_api_1.0.0.wsdl
+      service: TemperatureConversions
+      port: TemperatureConversionsSoap
+      soap-version: '1.1'
+    assembly:
+      execute:
+        - invoke:
+            title: invoke
+            target-url: >-
+              https://webservices.daehosting.com/services/TemperatureConversions.wso
+            version: 2.0.0
+            header-control:
+              type: blocklist
+              values: []
+            parameter-control:
+              type: blocklist
+              values: []
+    x-ibm-apiconnect-wsdl:
+      package-version: 2.0.36
+      options: {}
+      messages:
+        info:
+          - message: >-
+              The wsdl 'service' has multiple 'ports'. The api is generated
+              using information in the first soap 'port'.
+        warning: []
+        error: []
+      previous:
+        package-version: 2.0.36
+        options: {}
+        messages:
+          info:
+            - message: >-
+                The wsdl 'service' has multiple 'ports'. The api is generated
+                using information in the first soap 'port'.
+          warning: []
+          error: []

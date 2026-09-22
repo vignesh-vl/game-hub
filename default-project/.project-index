@@ -1,0 +1,88 @@
+{
+  "nodes": [
+    {
+      "id": "13821d17-cc0f-4af4-868a-576ed8432976:0",
+      "projectId": "o0InAdg6",
+      "filePath": "default-project/temperatureconversions_api_1.0.0.wsdl",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1790066658710,
+      "schemaVersion": 1
+    },
+    {
+      "id": "88558213-2006-4a12-ab56-638a643f3f79:0",
+      "projectId": "o0InAdg6",
+      "filePath": "default-project/temperatureconversions_api_1.0.0.yaml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1790066660466,
+      "schemaVersion": 1,
+      "kind": "API",
+      "name": "temperatureconversions",
+      "namespace": "default-project",
+      "version": "1.0.0",
+      "contentHash": "f9385d994ba1ce7b"
+    },
+    {
+      "id": "a469bf96-17d9-4d07-8621-67fd8a826560:0",
+      "projectId": "o0InAdg6",
+      "filePath": "default-project/temperatureconversions_api_1.0.0.spec.yaml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1790066659479,
+      "schemaVersion": 1
+    },
+    {
+      "id": "ff578269-1bff-4a6d-b503-3f422d46c8b7:0",
+      "projectId": "o0InAdg6",
+      "filePath": "default-project/temperatureconversions_1.0.0.policy.yaml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1790066656784,
+      "schemaVersion": 1,
+      "kind": "DataPowerAssembly",
+      "name": "temperatureconversions-policy",
+      "namespace": "default-project",
+      "version": "1.0.0",
+      "contentHash": "f261b0b4293de3b1"
+    }
+  ],
+  "edges": [
+    {
+      "id": "6979b882-db3e-4fa9-8f60-0c553f8ebd6e",
+      "projectId": "o0InAdg6",
+      "sourceNodeId": "88558213-2006-4a12-ab56-638a643f3f79:0",
+      "targetNodeId": "a469bf96-17d9-4d07-8621-67fd8a826560:0",
+      "targetRefType": "same-project",
+      "targetRefString": "./temperatureconversions_api_1.0.0.spec.yaml",
+      "targetRefKind": "support",
+      "isValid": true,
+      "createdAt": 1790066660469,
+      "lastValidated": 1790066660469
+    },
+    {
+      "id": "7ad905aa-7ae6-4394-84f1-02b81c9e7293",
+      "projectId": "o0InAdg6",
+      "sourceNodeId": "88558213-2006-4a12-ab56-638a643f3f79:0",
+      "targetNodeId": "13821d17-cc0f-4af4-868a-576ed8432976:0",
+      "targetRefType": "same-project",
+      "targetRefString": "./temperatureconversions_api_1.0.0.wsdl",
+      "targetRefKind": "support",
+      "isValid": true,
+      "createdAt": 1790066660469,
+      "lastValidated": 1790066660469
+    },
+    {
+      "id": "e7f50173-b99f-4529-a654-a07b395426d1",
+      "projectId": "o0InAdg6",
+      "sourceNodeId": "88558213-2006-4a12-ab56-638a643f3f79:0",
+      "targetNodeId": "ff578269-1bff-4a6d-b503-3f422d46c8b7:0",
+      "targetRefType": "same-project",
+      "targetRefString": "default-project:temperatureconversions-policy:1.0.0",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1790066660469,
+      "lastValidated": 1790066660469
+    }
+  ]
+}
