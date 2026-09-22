@@ -110,3 +110,8 @@ projects:
     description: ''
     tags: []
     lastUpdated: 1789735563455
+  default-project:
+    id: o0InAdg6
+    description: ''
+    tags: []
+    lastUpdated: 1790066654337
