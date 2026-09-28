@@ -1,0 +1,62 @@
+{
+  "nodes": [
+    {
+      "id": "481b4a59-be5b-49db-ad26-cdfaa56cf080:0",
+      "projectId": "lIVpHtfA",
+      "filePath": "demoahvsjhvqw/.project-index",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1790599483564,
+      "schemaVersion": 1
+    },
+    {
+      "id": "81f7058a-c17a-4bc1-8e4b-e17c2210426e:0",
+      "projectId": "lIVpHtfA",
+      "filePath": "demoahvsjhvqw/new/api/new.yaml",
+      "docIndex": 0,
+      "assetType": "resource",
+      "lastIndexed": 1790599495615,
+      "schemaVersion": 1,
+      "kind": "API",
+      "name": "new",
+      "namespace": "demoahvsjhvqw",
+      "version": "1.0",
+      "contentHash": "e601dd1e90014fea"
+    },
+    {
+      "id": "e93c0b82-72d8-4e41-a998-4d5960f59035:0",
+      "projectId": "lIVpHtfA",
+      "filePath": "demoahvsjhvqw/new/api/new-spec.yml",
+      "docIndex": 0,
+      "assetType": "support",
+      "lastIndexed": 1790599493231,
+      "schemaVersion": 1
+    }
+  ],
+  "edges": [
+    {
+      "id": "8b1f5e37-0d44-4c34-a353-d826cc0ade48",
+      "projectId": "lIVpHtfA",
+      "sourceNodeId": "81f7058a-c17a-4bc1-8e4b-e17c2210426e:0",
+      "targetNodeId": "002d4115-c453-44d7-a0fc-026a7aa3fc63:0",
+      "targetRefType": "cross-project",
+      "targetRefString": "Project0434_Product3:Assembly-3:1",
+      "targetRefKind": "resource",
+      "isValid": true,
+      "createdAt": 1790599495616,
+      "lastValidated": 1790599495616
+    },
+    {
+      "id": "ec714f19-31aa-4a47-a21d-f2486dcc78e8",
+      "projectId": "lIVpHtfA",
+      "sourceNodeId": "81f7058a-c17a-4bc1-8e4b-e17c2210426e:0",
+      "targetNodeId": "e93c0b82-72d8-4e41-a998-4d5960f59035:0",
+      "targetRefType": "same-project",
+      "targetRefString": "./new-spec.yml",
+      "targetRefKind": "support",
+      "isValid": true,
+      "createdAt": 1790599494197,
+      "lastValidated": 1790599494197
+    }
+  ]
+}
